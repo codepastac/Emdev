@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emmanuel Carter | Full-Stack Developer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            line-height: 1.7;
+            color: #2c3e50;
+            background: #f8fafc;
+            font-size: 16px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            min-height: 100vh;
+            box-shadow: 0 0 50px rgba(0, 0, 0, 0.05);
+        }
+
+        .header {
+            padding: 4rem 3rem 3rem;
+            background: linear-gradient(135deg, #f7f9fc 0%, #ffffff 100%);
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .profile {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .name {
+            font-size: 2.2rem;
+            font-weight: 300;
+            color: #1a202c;
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.5px;
+        }
+
+        .title {
+            font-size: 1.1rem;
+            color: #64748b;
+            margin-bottom: 2rem;
+            font-weight: 400;
+        }
+
+        .contact {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .contact-item {
+            color: #64748b;
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .quote {
+            font-style: italic;
+            color: #64748b;
+            font-size: 1rem;
+            max-width: 500px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .content {
+            padding: 3rem;
+        }
+
+        .section {
+            margin-bottom: 3rem;
+        }
+
+        .section-title {
+            font-size: 1.3rem;
+            font-weight: 500;
+            color: #1a202c;
+            margin-bottom: 2rem;
+            letter-spacing: -0.3px;
+        }
+
+        .summary {
+            color: #4a5568;
+            line-height: 1.8;
+            text-align: left;
+            max-width: none;
+        }
+
+        .experience-item {
+            margin-bottom: 2.5rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid #f1f5f9;
+        }
+
+        .experience-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .company-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 0.5rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .company-name {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #1a202c;
+        }
+
+        .year {
+            color: #64748b;
+            font-size: 0.9rem;
+        }
+
+        .role {
+            color: #4a5568;
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+        }
+
+        .description {
+            color: #4a5568;
+            line-height: 1.7;
+        }
+
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-group {
+            padding: 1.5rem;
+            background: #fafbfc;
+            border-radius: 8px;
+            border: 1px solid #f1f5f9;
+        }
+
+        .skill-group-title {
+            font-weight: 500;
+            color: #1a202c;
+            margin-bottom: 1rem;
+            font-size: 1rem;
+        }
+
+        .skills-list {
+            color: #4a5568;
+            line-height: 1.8;
+        }
+
+        .education-item {
+            padding: 1.5rem;
+            background: #fafbfc;
+            border-radius: 8px;
+            border: 1px solid #f1f5f9;
+        }
+
+        .degree {
+            font-weight: 600;
+            color: #1a202c;
+            margin-bottom: 0.3rem;
+        }
+
+        .university {
+            color: #64748b;
+            font-size: 0.95rem;
+        }
+
+        .certifications-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+
+        .cert-item {
+            padding: 1rem;
+            background: #fafbfc;
+            border-radius: 6px;
+            border: 1px solid #f1f5f9;
+        }
+
+        .cert-name {
+            font-weight: 500;
+            color: #1a202c;
+            font-size: 0.95rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .cert-provider {
+            color: #64748b;
+            font-size: 0.9rem;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+            padding: 2rem;
+            background: #fafbfc;
+            border-radius: 8px;
+            border: 1px solid #f1f5f9;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 1.8rem;
+            font-weight: 300;
+            color: #1a202c;
+            margin-bottom: 0.3rem;
+        }
+
+        .stat-label {
+            color: #64748b;
+            font-size: 0.85rem;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 2.5rem 3rem;
+            background: #fafbfc;
+            border-top: 1px solid #e2e8f0;
+        }
+
+        .cta-text {
+            color: #4a5568;
+            margin-bottom: 1.5rem;
+            font-size: 1rem;
+        }
+
+        .contact-button {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            background: #1a202c;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 500;
+            transition: all 0.2s ease;
+            margin: 0 0.5rem;
+        }
+
+        .contact-button:hover {
+            background: #2d3748;
+            transform: translateY(-1px);
+        }
+
+        .contact-button.secondary {
+            background: transparent;
+            color: #1a202c;
+            border: 1px solid #e2e8f0;
+        }
+
+        .contact-button.secondary:hover {
+            background: #f7fafc;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                margin: 0;
+                box-shadow: none;
+            }
+
+            .header {
+                padding: 3rem 2rem 2rem;
+            }
+
+            .content {
+                padding: 2rem;
+            }
+
+            .name {
+                font-size: 1.8rem;
+            }
+
+            .contact {
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+            }
+
+            .company-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.5rem;
+            }
+
+            .skills-container {
+                grid-template-columns: 1fr;
+            }
+
+            .footer {
+                padding: 2rem;
+            }
+
+            .contact-button {
+                display: block;
+                margin: 0.5rem 0;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="profile">
+                <h1 class="name">Emmanuel Carter</h1>
+                <p class="title">Full-Stack Developer & Web3 Specialist</p>
+                
+                <div class="contact">
+                    <div class="contact-item">
+                        <span>📍</span> Liverpool, UK
+                    </div>
+                    <div class="contact-item">
+                        <span>✉️</span> officialsamdeveloper@gmail.com
+                    </div>
+                    <div class="contact-item">
+                        <span>🐦</span> @0xEmdev
+                    </div>
+                </div>
+
+                <div class="stats">
+                    <div class="stat-item">
+                        <div class="stat-number">5+</div>
+                        <div class="stat-label">Years Experience</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">50+</div>
+                        <div class="stat-label">Projects</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">35%</div>
+                        <div class="stat-label">Performance Boost</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">15%</div>
+                        <div class="stat-label">Engagement Increase</div>
+                    </div>
+                </div>
+
+                <p class="quote">"What a user sees on a website decides if they stay, what they feel decides if they trust."</p>
+            </div>
+        </div>
+
+        <div class="content">
+            <div class="section">
+                <h2 class="section-title">About</h2>
+                <p class="summary">
+                    Full-Stack Developer with 5+ years of experience building secure, scalable applications for the Web3 ecosystem. I specialize in creating intuitive user experiences that bridge the gap between complex blockchain technology and everyday users. My work with industry leaders like Circle, Aave, 1inch, and KaiaChain has helped optimize platform performance and drive user adoption across decentralized applications.
+                </p>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Experience</h2>
+                
+                <div class="experience-item">
+                    <div class="company-header">
+                        <h3 class="company-name">Circle</h3>
+                        <span class="year">2024</span>
+                    </div>
+                    <p class="role">Full Stack Developer & UI/UX Lead</p>
+                    <p class="description">
+                        Led the design and development of payment solutions leveraging USDC stablecoin. Focused on creating secure, intuitive interfaces that simplified complex financial operations for end users.
+                    </p>
+                </div>
+
+                <div class="experience-item">
+                    <div class="company-header">
+                        <h3 class="company-name">Aave</h3>
+                        <span class="year">2024</span>
+                    </div>
+                    <p class="role">Front End & UI/UX Developer</p>
+                    <p class="description">
+                        Developed clean, performant interfaces for Aave's decentralized finance platform. Enhanced visual consistency and usability across multiple product areas to improve user experience.
+                    </p>
+                </div>
+
+                <div class="experience-item">
+                    <div class="company-header">
+                        <h3 class="company-name">KaiaChain</h3>
+                        <span class="year">2023</span>
+                    </div>
+                    <p class="role">Front End Developer</p>
+                    <p class="description">
+                        Built scalable UI components for KaiaChain's blockchain ecosystem. Integrated DApp functionality with focus on accessibility and cross-platform compatibility.
+                    </p>
+                </div>
+
+                <div class="experience-item">
+                    <div class="company-header">
+                        <h3 class="company-name">1inch</h3>
+                        <span class="year">2021</span>
+                    </div>
+                    <p class="role">Front End Developer</p>
+                    <p class="description">
+                        Developed responsive interfaces for the DeFi liquidity aggregation platform. Optimized performance and implemented real-time data integration for trading functionality.
+                    </p>
+                </div>
+
+                <div class="experience-item">
+                    <div class="company-header">
+                        <h3 class="company-name">Freelance</h3>
+                        <span class="year">2018 - Present</span>
+                    </div>
+                    <p class="role">Full-Stack Developer</p>
+                    <p class="description">
+                        Delivered 50+ full-stack solutions for Web3 platforms and DeFi applications. Achieved 35% performance improvements and 15% engagement increases through optimized user experiences and technical architecture.
+                    </p>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Technical Skills</h2>
+                <div class="skills-container">
+                    <div class="skill-group">
+                        <h3 class="skill-group-title">Frontend</h3>
+                        <p class="skills-list">React, JavaScript, HTML5, CSS3, UI/UX Design, Responsive Development</p>
+                    </div>
+                    <div class="skill-group">
+                        <h3 class="skill-group-title">Backend & Blockchain</h3>
+                        <p class="skills-list">Node.js, Nest.js, EVM, Rust, Solana, Smart Contract Integration</p>
+                    </div>
+                    <div class="skill-group">
+                        <h3 class="skill-group-title">Tools & Infrastructure</h3>
+                        <p class="skills-list">Flutter, Git, Docker, CI/CD, AWS, GCP, API Development</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Education</h2>
+                <div class="education-item">
+                    <div class="degree">Bachelor of Science in Computer Science</div>
+                    <div class="university">Kwara State University, 2020</div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Certifications</h2>
+                <div class="certifications-grid">
+                    <div class="cert-item">
+                        <div class="cert-name">Full Stack Web Development</div>
+                        <div class="cert-provider">Coursera</div>
+                    </div>
+                    <div class="cert-item">
+                        <div class="cert-name">UI/UX Design Specialization</div>
+                        <div class="cert-provider">Coursera</div>
+                    </div>
+                    <div class="cert-item">
+                        <div class="cert-name">Blockchain Development</div>
+                        <div class="cert-provider">Industry Certified</div>
+                    </div>
+                    <div class="cert-item">
+                        <div class="cert-name">Cloud Computing</div>
+                        <div class="cert-provider">Industry Certified</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p class="cta-text">Let's discuss your next project</p>
+            <a href="mailto:officialsamdeveloper@gmail.com" class="contact-button">Get in Touch</a>
+            <a href="https://x.com/0xemdev?s=21" class="contact-button secondary">View Work</a>
+        </div>
+    </div>
+</body>
+</html>
